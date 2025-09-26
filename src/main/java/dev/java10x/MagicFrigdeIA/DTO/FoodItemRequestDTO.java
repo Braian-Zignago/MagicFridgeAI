@@ -2,13 +2,15 @@ package dev.java10x.MagicFrigdeIA.DTO;
 
 import dev.java10x.MagicFrigdeIA.model.CategoryFood;
 
+import java.time.LocalDate;
+
 public class FoodItemRequestDTO {
     private String name;
     private CategoryFood category;
-    private int quantity;
-    private String expirationDate;
+    private Integer quantity;
+    private LocalDate expirationDate;
 
-    public FoodItemRequestDTO(String name, CategoryFood category, int quantity, String expirationDate) {
+    public FoodItemRequestDTO(String name, CategoryFood category, Integer quantity, LocalDate expirationDate) {
         this.name = name;
         this.category = category;
         this.quantity = quantity;
@@ -31,19 +33,19 @@ public class FoodItemRequestDTO {
         this.category = category;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public String getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(String expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 }

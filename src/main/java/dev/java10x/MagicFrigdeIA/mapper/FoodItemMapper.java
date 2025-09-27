@@ -18,8 +18,4 @@ public interface FoodItemMapper {
     FoodItemResponseDTO forFoodItemResponseDTO(FoodItem foodItem);
 
     List<FoodItemResponseDTO> forFoodItemResponseDTOList(List<FoodItem> foodItemList);
-
-    Optional<FoodItemResponseDTO> forFoodItemResponseDTO(Optional<FoodItem> foodItemOptional);
-
-    FoodItem forFoodItemModel(Optional<FoodItemRequestDTO> foodItemRequestDTOOptional);
 }

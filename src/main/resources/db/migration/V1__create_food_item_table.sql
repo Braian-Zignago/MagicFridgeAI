@@ -1,9 +1,9 @@
 -- V1__create_food_item_table --
 
 CREATE TABLE food_items (
-    id SERIAL PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     category VARCHAR(100) NOT NULL,
-    quantity INT,
+    quantity INT NOT NULL,
     expiration_date DATE NOT NULL
 );

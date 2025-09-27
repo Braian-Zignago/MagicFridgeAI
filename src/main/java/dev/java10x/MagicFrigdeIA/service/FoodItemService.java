@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -35,12 +36,20 @@ public class FoodItemService {
         return foodItemResponseDTOS;
     }
 
+    public FoodItemResponseDTO getFoodById(Long id){
+        return foodItemMapper.forFoodItemResponseDTO(foodItemRepository.findById(id).orElse(null));
+    }
+
     public FoodItemResponseDTO patchFoodItem(Long id, FoodItemRequestDTO requestDTO) {
         FoodItem foodItem = foodItemRepository.findById(id).orElse(null);
         if (foodItem == null) {
             return null;
         }
         foodItemUpdate.updateFoodItem(requestDTO, foodItem);
+        return foodItemMapper.forFoodItemResponseDTO(foodItemRepository.save(foodItem));
+    }
+
+    public FoodItemResponseDTO putFoodItem(FoodItem foodItem){
         return foodItemMapper.forFoodItemResponseDTO(foodItemRepository.save(foodItem));
     }
 

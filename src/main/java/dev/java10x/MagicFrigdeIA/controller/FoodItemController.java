@@ -38,6 +38,17 @@ public class FoodItemController {
         return ResponseEntity.status(HttpStatus.FOUND).body(responseDTOS);
     }
 
+    // GET
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getFoodItemById(@PathVariable Long id) {
+        FoodItemResponseDTO responseDTO = foodItemService.getFoodById(id);
+        if (responseDTO == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Food item with ID " + id + " not found");
+        }
+        return ResponseEntity.status(HttpStatus.FOUND).body(responseDTO);
+    }
+
     // PATCH
     @PatchMapping("/update/{id}")
     public ResponseEntity<?> updateFoodItem(@PathVariable Long id, @RequestBody FoodItemRequestDTO foodItemRequestDTO) {
@@ -46,6 +57,12 @@ public class FoodItemController {
             return ResponseEntity.badRequest().body("Error updating food item");
         }
         return ResponseEntity.status(HttpStatus.OK).body(responseDTO);
+    }
+
+    //PUT
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> putFoodItem(@PathVariable Long id, @RequestBody FoodItemRequestDTO foodItemRequestDTO){
+        return updateFoodItem(id, foodItemRequestDTO);
     }
 
     // DELETE

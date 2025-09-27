@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper(componentModel = "spring")
 public interface FoodItemMapper {
@@ -17,4 +18,8 @@ public interface FoodItemMapper {
     FoodItemResponseDTO forFoodItemResponseDTO(FoodItem foodItem);
 
     List<FoodItemResponseDTO> forFoodItemResponseDTOList(List<FoodItem> foodItemList);
+
+    Optional<FoodItemResponseDTO> forFoodItemResponseDTO(Optional<FoodItem> foodItemOptional);
+
+    FoodItem forFoodItemModel(Optional<FoodItemRequestDTO> foodItemRequestDTOOptional);
 }

@@ -1,4 +1,4 @@
-# Sistema cadastro de alimentos e geração de receitas!
+# Sistema cadastro de alimentos e gerador de receitas!
 
 Bem-vindo ao MagicFridgeAI!
 Este projeto é uma aplicação de arquitetura em camadas desenvolvida com Spring Boot, projetada para cadastrar alimentos em uma geladeira que posteriormente vai gerar uma receita com os alimentos no banco de dados. O projeto utiliza H2 como banco de dados em memória, Flyway para migrações de banco de dados e segue boas práticas de desenvolvimento de software como controle de versão com Git e hospedagem de repositório no GitHub.

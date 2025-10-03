@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5174")
 @RestController
 @RequestMapping("/food")
 @RequiredArgsConstructor
@@ -35,7 +36,7 @@ public class FoodItemController {
         if (responseDTOS == null) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("No food items found");
         }
-        return ResponseEntity.status(HttpStatus.FOUND).body(responseDTOS);
+        return ResponseEntity.status(HttpStatus.OK).body(responseDTOS);
     }
 
     // GET

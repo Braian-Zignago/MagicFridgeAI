@@ -56,6 +56,12 @@ Este projeto é uma aplicação de arquitetura em camadas desenvolvida com Sprin
 ![SQL](https://img.shields.io/badge/SQL-303E48?style=for-the-badge&logo=postgresql&logoColor=white)
 ---
 
+## 🫂 Integração com Frontend
+
+Para realizar a integração com o Frontend, você pode clonar o projeto e rodar localmente.
+
+👉 [Link do repositório](https://github.com/Braian-Zignago/MagicFridgeAI-Front)
+
 ## Configuração
 1. Clone o repositório:
    ```bash
